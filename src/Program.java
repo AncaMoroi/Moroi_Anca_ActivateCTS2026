@@ -6,6 +6,9 @@ import adapterEx1.comanda.AdapterComandaRestaurant;
 import adapterEx1.comanda.IComandaMancare;
 import adapterEx1.obiecte.ComandaRestaurant;
 import adapterEx1.obiecte.PlasareComandaRestaurant;
+import composite1.clase.CategorieComposite;
+import composite1.clase.ItemComponent;
+import composite1.clase.ProdusLeaf;
 import decorator.coffeeShop.clasa.BasicCoffe;
 import decorator.coffeeShop.clasa.ICoffe;
 import decorator.coffeeShop.decorator.Milk;
@@ -26,15 +29,26 @@ public class Program {
         ICoffe c1 = new BasicCoffe(10, 200);
         c1.prepare();
 
-
-
         ICoffe c2 = new Milk(new BasicCoffe(10,200));
         c2.prepare();
 
-
-
         ICoffe c3 = new SugarDecorator(new BasicCoffe(10, 200));
         c3.prepare();
+
+        ItemComponent espresso = new ProdusLeaf("Espresso", 10);
+        ItemComponent cappuccino = new ProdusLeaf("Cappuccino", 15);
+        ItemComponent latte = new ProdusLeaf("Latte", 18);
+        CategorieComposite bauturi = new CategorieComposite("Bauturi");
+        CategorieComposite cafele = new CategorieComposite("Cafele");
+
+        cafele.adauga(espresso);
+        cafele.adauga(cappuccino);
+
+        CategorieComposite meniu = new CategorieComposite("Meniu Coffee Shop");
+        meniu.adauga(bauturi);
+        meniu.adauga(cafele);
+
+        meniu.afisare();
 
 
     }
