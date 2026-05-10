@@ -1,3 +1,7 @@
+import Proxy.clase.CoffeObjProxy;
+import Proxy.clase.CoffeService;
+import Proxy.clase.ObjCoffeeMachine;
+import Proxy.clase.Proxy;
 import adapter.obiecte.inchirieremasini.Masina;
 import adapter.obiecte.inchirieremasini.MasiniInchiriate;
 import adapter.obiecte.obiecte.IPachetTuristic;
@@ -21,34 +25,50 @@ public class Program {
     public static void main(String[] args) {
 
 
-        //Facade
-        Facade hotelFacade = new Facade();
-        hotelFacade.checkIn("Andrei Popescu", "204");
+//        //Facade
+//        Facade hotelFacade = new Facade();
+//        hotelFacade.checkIn("Andrei Popescu", "204");
+//
+//        //Decorator
+//        ICoffe c1 = new BasicCoffe(10, 200);
+//        c1.prepare();
+//
+//        ICoffe c2 = new Milk(new BasicCoffe(10,200));
+//        c2.prepare();
+//
+//        ICoffe c3 = new SugarDecorator(new BasicCoffe(10, 200));
+//        c3.prepare();
+//
+//        ItemComponent espresso = new ProdusLeaf("Espresso", 10);
+//        ItemComponent cappuccino = new ProdusLeaf("Cappuccino", 15);
+//        ItemComponent latte = new ProdusLeaf("Latte", 18);
+//        CategorieComposite bauturi = new CategorieComposite("Bauturi");
+//        CategorieComposite cafele = new CategorieComposite("Cafele");
+//
+//        cafele.adauga(espresso);
+//        cafele.adauga(cappuccino);
+//
+//        CategorieComposite meniu = new CategorieComposite("Meniu Coffee Shop");
+//        meniu.adauga(bauturi);
+//        meniu.adauga(cafele);
+//
+//        meniu.afisare();
 
-        //Decorator
-        ICoffe c1 = new BasicCoffe(10, 200);
-        c1.prepare();
 
-        ICoffe c2 = new Milk(new BasicCoffe(10,200));
-        c2.prepare();
+        //proxy
+        CoffeObjProxy cappucino = new CoffeObjProxy("Espresso", 12);
 
-        ICoffe c3 = new SugarDecorator(new BasicCoffe(10, 200));
-        c3.prepare();
+        CoffeObjProxy luxuryCoffee = new CoffeObjProxy("Golden Coffee", 50);
 
-        ItemComponent espresso = new ProdusLeaf("Espresso", 10);
-        ItemComponent cappuccino = new ProdusLeaf("Cappuccino", 15);
-        ItemComponent latte = new ProdusLeaf("Latte", 18);
-        CategorieComposite bauturi = new CategorieComposite("Bauturi");
-        CategorieComposite cafele = new CategorieComposite("Cafele");
+        CoffeService coffeeShop = new Proxy();
 
-        cafele.adauga(espresso);
-        cafele.adauga(cappuccino);
+        coffeeShop.serverCoffee(cappucino);
 
-        CategorieComposite meniu = new CategorieComposite("Meniu Coffee Shop");
-        meniu.adauga(bauturi);
-        meniu.adauga(cafele);
 
-        meniu.afisare();
+        coffeeShop.serverCoffee(luxuryCoffee);
+
+
+
 
 
     }
