@@ -1,4 +1,9 @@
 import Command.*;
+import Ex1Test2.Decorator.FriscaDecorator;
+import Ex1Test2.Decorator.LapteDecorator;
+import Ex1Test2.Decorator.ZaharDecorator;
+import Ex1Test2.clasa.BasicCoffeE;
+import Ex1Test2.clasa.CoffeInterface;
 import Proxy.clase.CoffeObjProxy;
 import Proxy.clase.CoffeService;
 import Proxy.clase.ObjCoffeeMachine;
@@ -84,6 +89,20 @@ public class Program {
         chelner.setOrderCommand(pasta);
         chelner.placeOrder();
 
+        CoffeInterface coffee = new BasicCoffeE("Espresso", 10);
+        System.out.println("Descriere: " + coffee.getDescription());
+        System.out.println("Pret: " + coffee.getPrice());
+        coffee = new LapteDecorator(coffee);
+        System.out.println("Descriere: " + coffee.getDescription());
+        System.out.println("Pret: " + coffee.getPrice());
+        coffee = new FriscaDecorator(coffee);
+        System.out.println("Descriere: " + coffee.getDescription());
+        System.out.println("Pret: " + coffee.getPrice());
+        coffee =  new ZaharDecorator((coffee));
+        System.out.println("Descriere: " + coffee.getDescription());
+        System.out.println("Pret: " + coffee.getPrice());
+
+        coffee.prepare();
 
 
 
