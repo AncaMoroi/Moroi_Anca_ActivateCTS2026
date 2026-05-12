@@ -1,3 +1,4 @@
+import Command.*;
 import Proxy.clase.CoffeObjProxy;
 import Proxy.clase.CoffeService;
 import Proxy.clase.ObjCoffeeMachine;
@@ -55,17 +56,33 @@ public class Program {
 //        meniu.afisare();
 
 
-        //proxy
-        CoffeObjProxy cappucino = new CoffeObjProxy("Espresso", 12);
+//        //proxy
+//        CoffeObjProxy cappucino = new CoffeObjProxy("Espresso", 12);
+//
+//        CoffeObjProxy luxuryCoffee = new CoffeObjProxy("Golden Coffee", 50);
+//
+//        CoffeService coffeeShop = new Proxy();
+//
+//        coffeeShop.serverCoffee(cappucino);
+//
+//
+//        coffeeShop.serverCoffee(luxuryCoffee);
 
-        CoffeObjProxy luxuryCoffee = new CoffeObjProxy("Golden Coffee", 50);
 
-        CoffeService coffeeShop = new Proxy();
+        /// Comand
+        ChefReceiver chef = new ChefReceiver();
 
-        coffeeShop.serverCoffee(cappucino);
+        OrderCommand pizzaOrder = new PizzaCommand(chef);
 
+        OrderCommand pasta = new PastaCommand(chef);
 
-        coffeeShop.serverCoffee(luxuryCoffee);
+        ChelnerInvoker chelner = new ChelnerInvoker();
+
+        chelner.setOrderCommand(pizzaOrder);
+        chelner.placeOrder();
+
+        chelner.setOrderCommand(pasta);
+        chelner.placeOrder();
 
 
 
