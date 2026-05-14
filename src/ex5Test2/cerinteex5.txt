@@ -1,0 +1,19 @@
+Problemă propusă
+
+Un restaurant vrea să dezvolte o aplicație Java pentru gestionarea comenzilor online.
+
+Clientul poate plasa o comandă, iar înainte ca aceasta să ajungă la bucătărie trebuie să treacă prin mai multe verificări:
+
+se verifică dacă produsele sunt disponibile în stoc;
+se verifică dacă plata a fost efectuată;
+se verifică dacă adresa de livrare este validă.
+
+Dacă una dintre verificări eșuează, comanda este oprită și se afișează un mesaj corespunzător. Dacă toate verificările trec, comanda este trimisă la bucătărie.
+
+Restaurantul are și mai multe tipuri de preparate în meniu. Unele preparate simple, precum pizza sau burger, pot fi vândute individual, dar restaurantul vrea să poată crea și meniuri compuse, de exemplu:
+
+meniu pizza = pizza + suc + desert
+meniu burger = burger + cartofi + suc
+
+Aplicația trebuie să permită calcularea prețului total atât pentru produse simple, cât și pentru meniuri compuse.
+
