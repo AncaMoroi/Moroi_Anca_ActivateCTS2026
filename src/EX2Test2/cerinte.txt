@@ -1,0 +1,5 @@
+Într-o aplicație de restaurant:
+
+doar managerii pot șterge comenzi,
+ospătarii pot doar vizualiza comenzile,
+accesul trebuie verificat înainte să ajungi la obiectul real.
