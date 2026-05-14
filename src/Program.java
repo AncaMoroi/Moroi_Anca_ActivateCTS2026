@@ -1,32 +1,6 @@
-import Command.*;
-import Ex1Test2.Decorator.FriscaDecorator;
-import Ex1Test2.Decorator.LapteDecorator;
-import Ex1Test2.Decorator.ZaharDecorator;
-import Ex1Test2.clasa.BasicCoffeE;
-import Ex1Test2.clasa.CoffeInterface;
-import Proxy.clase.CoffeObjProxy;
-import Proxy.clase.CoffeService;
-import Proxy.clase.ObjCoffeeMachine;
-import Proxy.clase.Proxy;
-import adapter.obiecte.inchirieremasini.Masina;
-import adapter.obiecte.inchirieremasini.MasiniInchiriate;
-import adapter.obiecte.obiecte.IPachetTuristic;
-import adapter.obiecte.obiecte.PachetMasinaInchiriata;
-import adapterEx1.comanda.AdapterComandaRestaurant;
-import adapterEx1.comanda.IComandaMancare;
-import adapterEx1.obiecte.ComandaRestaurant;
-import adapterEx1.obiecte.PlasareComandaRestaurant;
-import composite1.clase.CategorieComposite;
-import composite1.clase.ItemComponent;
-import composite1.clase.ProdusLeaf;
-import decorator.coffeeShop.clasa.BasicCoffe;
-import decorator.coffeeShop.clasa.ICoffe;
-import decorator.coffeeShop.decorator.Milk;
-import decorator.coffeeShop.decorator.SugarDecorator;
-import facade.hotel.Facade;
+import ChainOfResponsability.clase.*;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Program {
     public static void main(String[] args) {
 
@@ -75,7 +49,7 @@ public class Program {
 
 
         /// Comand
-        ChefReceiver chef = new ChefReceiver();
+/*        ChefReceiver chef = new ChefReceiver();
 
         OrderCommand pizzaOrder = new PizzaCommand(chef);
 
@@ -102,10 +76,42 @@ public class Program {
         System.out.println("Descriere: " + coffee.getDescription());
         System.out.println("Pret: " + coffee.getPrice());
 
-        coffee.prepare();
+        coffee.prepare();*/
 
 
+//        OrderService manager = new OrderServiceProxy3("manager");
+//
+//        manager.viewOrders();
+//        manager.deleteOrder();
+//
+//
+//        OrderService ospatar = new OrderServiceProxy3("ospatar");
+//
+//        ospatar.viewOrders();
+//        ospatar.deleteOrder();
+//
+//    }
 
+//        MetodaPlataVeche bank = new MetodaPlataVeche();
+//        PaymentProcessor procesor = new BankAdapter(bank);
+//        procesor.pay(250.0);
+
+//        Facade facade = new Facade();
+//       // facade.getInventory().addStock(20);
+//        facade.placeOrder("Pizza", 5, 120);
+
+
+        Order order = new Order("Burger", false, true);
+
+
+        OrderHandler stock = new StockHandler();
+        OrderHandler payment = new PaymentHandler();
+        OrderHandler kitchen = new KitchenHandler();
+
+        stock.setNext(payment);
+        payment.setNext(kitchen);
+
+        stock.handle(order);
 
     }
 }

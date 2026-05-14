@@ -1,0 +1,6 @@
+Restaurantul tău are:
+
+un sistem nou de plată,
+dar banca folosește o interfață veche incompatibilă.
+
+Tu NU poți modifica codul băncii, dar vrei să îl faci compatibil cu aplicația ta.

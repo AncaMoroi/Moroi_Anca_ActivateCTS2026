@@ -1,0 +1,10 @@
+Ai un sistem foarte complex:
+
+inventory,
+kitchen,
+billing,
+notifications,
+delivery,
+Vrei să oferi clientului o singură clasă simplă:
+
+restaurant.openDay();
