@@ -1,0 +1,16 @@
+Restaurantul vinde produse individuale:
+
+pizza
+burger
+suc
+desert
+
+dar și meniuri speciale:
+
+meniu family
+meniu pizza
+meniu burger
+
+Un meniu poate conține atât produse simple, cât și alte submeniuri.
+
+Când o comandă este pregătită, clientul trebuie notificat automat prin aplicație.

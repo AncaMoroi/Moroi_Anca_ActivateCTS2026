@@ -1,0 +1,5 @@
+Un restaurant are o aplicație prin care chelnerii trimit comenzi către bucătărie.
+
+Fiecare comandă (pizza, burger, paste etc.) trebuie salvată astfel încât managerul să poată reface ultima comandă anulată.
+
+Restaurantul colaborează și cu o firmă externă de livrare care are propriul sistem incompatibil cu aplicația restaurantului. Sistemul restaurantului trebuie să poată comunica cu acel sistem extern fără a modifica codul firmei de livrare.
